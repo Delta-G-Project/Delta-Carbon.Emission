@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cairo: var(--font-cairo);
+  --font-alexandria: var(--font-alexandria);
+  --color-primary: #10b981;
+  --color-primary-light: #ecfdf5;
+  --color-primary-dark: #059669;
+}
+@layer base {
+  .font-cairo {
+    font-family: var(--font-cairo), sans-serif !important;
+  }
+  .font-alexandria {
+    font-family: var(--font-alexandria), sans-serif !important;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .flex {
+  /* Keep flex direction as is */
+}
+
+/* --- react-international-phone Dropdown Fixes --- */
+.react-international-phone-country-selector-dropdown {
+  z-index: 100 !important;
+  background-color: white !important;
+  color: #1f2937 !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 0.5rem !important;
+  max-height: 250px !important;
+  overflow-y: auto !important;
+  position: absolute !important;
+  margin-top: 4px !important;
+}
+
+/* Scrollbar for the dropdown */
+.react-international-phone-country-selector-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+.react-international-phone-country-selector-dropdown::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.react-international-phone-country-selector-dropdown::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+/* RTL overrides for the dropdown position */
+[dir="rtl"] .react-international-phone-country-selector-dropdown {
+  right: 0 !important;
+  left: auto !important;
+}
+
+/* LTR overrides for the dropdown position */
+[dir="ltr"] .react-international-phone-country-selector-dropdown {
+  left: 0 !important;
+  right: auto !important;
+}
+
+/* Ensure the country name is readable */
+.react-international-phone-country-selector-dropdown__list-item-country-name {
+  color: #1f2937 !important;
+}
+.react-international-phone-country-selector-dropdown__list-item {
+  color: #1f2937 !important;
+}
+.react-international-phone-country-selector-dropdown__list-item:hover {
+  background-color: #f3f4f6 !important;
+}
+
+/* --- Register Page: Phone Input Overrides --- */
+.phone-container-custom .PhoneInputInput {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-weight: bold;
+}
+.phone-container-custom .PhoneInputCountry {
+  border-right: 2px solid #f3f4f6;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+.phone-container-custom:hover .PhoneInputCountryIcon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
